@@ -1,7 +1,7 @@
 import React from "react";
 import Router from "next/router";
 import NProgress from "nprogress";
-import debounce from "lodash.debounce";
+import { debounce } from "lodash";
 
 export const useProgressBar = () => {
   const { start, done } = NProgress;
