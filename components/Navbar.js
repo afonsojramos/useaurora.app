@@ -63,7 +63,7 @@ export const Navbar = () => {
                     onClick={() =>
                       setTheme(resolvedTheme === "dark" ? "light" : "dark")
                     }
-                    className="flex-shrink-0 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                    className="flex-shrink-0 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none"
                   >
                     <span className="sr-only">Toggle Theme</span>
                     {mounted && resolvedTheme === "dark" && (
