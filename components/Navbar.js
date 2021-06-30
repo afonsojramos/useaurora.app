@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { SearchIcon } from "@heroicons/react/solid";
 import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useTheme } from "next-themes";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { Aurora } from "../components/Aurora";
 
 export const Navbar = () => {
   const [mounted, setMounted] = useState(false);
@@ -19,49 +16,12 @@ export const Navbar = () => {
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="flex items-center px-2 lg:px-0">
                 <div className="flex-shrink-0">
-                  <img
-                    className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                    alt="Workflow"
-                  />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
-                  />
-                </div>
-                <div className="hidden lg:block lg:ml-6">
-                  <div className="flex space-x-4">
-                    {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <a
-                      href="#"
-                      className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Dashboard
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Team
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Projects
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Calendar
-                    </a>
-                  </div>
+                  <Aurora className="block lg:hidden h-8 w-auto" />
+                  <Aurora className="hidden lg:block h-8 w-auto" />
                 </div>
               </div>
               <div className="flex-1 flex justify-center px-2 lg:ml-6 lg:justify-end">
