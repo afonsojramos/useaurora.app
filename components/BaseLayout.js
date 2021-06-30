@@ -7,8 +7,8 @@ const SidebarItem = (props) => {
     <li>
       <NextLink href={props.link}>
         <a className="px-0 py-2 transition-colors duration-200 relative block hover:text-gray-900 text-gray-500 dark:text-gray-400 dark:hover:text-gray-200">
-          {/* <span class="rounded-md absolute inset-0 bg-cyan-50 opacity-0"></span> */}
-          <span class="relative">{props.text}</span>
+          {/* <span className="rounded-md absolute inset-0 bg-cyan-50 opacity-0"></span> */}
+          <span className="relative">{props.text}</span>
         </a>
       </NextLink>
     </li>
@@ -17,7 +17,7 @@ const SidebarItem = (props) => {
 
 const SidebarHeader = (props) => {
   return (
-    <h5 class="px-0 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-900 dark:text-gray-100">
+    <h5 className="px-0 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-900 dark:text-gray-100">
       {props.text}
     </h5>
   );
@@ -25,9 +25,9 @@ const SidebarHeader = (props) => {
 
 const Sidebar = () => {
   return (
-    <nav class="overflow-y-auto font-medium text-base lg:text-sm">
+    <nav className="overflow-y-auto font-medium text-base lg:text-sm">
       <ul>
-        <li class="mt-0">
+        <li className="mt-0">
           <SidebarHeader text="Introduction" />
           <ul>
             <SidebarItem link="/docs/introduction/about" text="About" />
@@ -36,7 +36,7 @@ const Sidebar = () => {
           </ul>
         </li>
 
-        <li class="mt-8">
+        <li className="mt-8">
           <SidebarHeader text="Getting Started" />
           <ul>
             <SidebarItem
@@ -62,7 +62,7 @@ const Sidebar = () => {
           </ul>
         </li>
 
-        <li class="mt-8">
+        <li className="mt-8">
           <SidebarHeader text="Integrations" />
           <ul>
             <SidebarItem
