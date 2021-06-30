@@ -28,20 +28,47 @@ const Sidebar = () => {
     <nav class="overflow-y-auto font-medium text-base lg:text-sm">
       <ul>
         <li class="mt-0">
-          <SidebarHeader text="Getting Started" />
+          <SidebarHeader text="Introduction" />
           <ul>
-            <SidebarItem link="/docs/installation" text="Installation" />
-            <SidebarItem link="/docs/installation" text="Release Notes" />
-            <SidebarItem link="/docs/installation" text="Upgrade Guide" />
+            <SidebarItem link="/docs/introduction/about" text="About" />
+            <SidebarItem link="/docs/introduction/features" text="Features" />
+            <SidebarItem link="/docs/introduction/faq" text="FAQ" />
           </ul>
         </li>
 
         <li class="mt-8">
-          <SidebarHeader text="Official Plugins" />
+          <SidebarHeader text="Getting Started" />
           <ul>
-            <SidebarItem link="/docs/installation" text="Installation" />
-            <SidebarItem link="/docs/installation" text="Release Notes" />
-            <SidebarItem link="/docs/installation" text="Upgrade Guide" />
+            <SidebarItem
+              link="/docs/getting-started/installation"
+              text="Installation"
+            />
+            <SidebarItem
+              link="/docs/getting-started/initialization"
+              text="Initialization"
+            />
+            <SidebarItem
+              link="/docs/getting-started/add-a-website"
+              text="Add a Website"
+            />
+            <SidebarItem
+              link="/docs/getting-started/collect-data"
+              text="Collect Data"
+            />
+            <SidebarItem
+              link="/docs/getting-started/share-statistics"
+              text="Share Statistics"
+            />
+          </ul>
+        </li>
+
+        <li class="mt-8">
+          <SidebarHeader text="Integrations" />
+          <ul>
+            <SidebarItem
+              link="/docs/integrations/ghost-blog"
+              text="Ghost Blog"
+            />
           </ul>
         </li>
       </ul>
