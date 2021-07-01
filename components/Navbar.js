@@ -39,8 +39,12 @@ export const Navbar = () => {
             <div className="relative flex items-center justify-between h-16">
               <div className="flex items-center px-2 lg:px-0">
                 <div className="flex-shrink-0">
-                  <Aurora className="block lg:hidden h-8 w-auto" />
-                  <Aurora className="hidden lg:block h-8 w-auto" />
+                  <NextLink href="/">
+                    <a>
+                      <Aurora className="block lg:hidden h-8 w-auto" />
+                      <Aurora className="hidden lg:block h-8 w-auto" />
+                    </a>
+                  </NextLink>
                 </div>
               </div>
               <div className="flex-1 flex justify-center px-2 lg:ml-6 lg:justify-end">
