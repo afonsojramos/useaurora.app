@@ -88,7 +88,7 @@ export const BaseLayout = ({ frontMatter, children, ...rest }) => {
     <div className="flex flex-col">
       <Navbar />
 
-      <div className="flex justify-center p-8 sm:p-16">
+      <div className="flex justify-center p-4 sm:p-16">
         <div className="h-10 bg-red-600"></div>
 
         <div className="flex justify-between w-full max-w-4xl sm:px-4 lg:px-8">
