@@ -27,16 +27,12 @@ export const Meta = () => {
       />
       <meta name="msapplication-TileColor" content="#2d89ef" />
       <meta name="theme-color" content="#ffffff" />
-      <meta property="og:image" content="/images/og_image.png" />
+      <meta property="og:image" content="/opengraph/og-image.png" />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Stacks Docs" />
+      <meta property="og:site_name" content="Aurora | Open Website Analytics" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@blockstack" />
-      <meta name="twitter:creator" content="@blockstack" />
-      <meta
-        name="og:image"
-        content="https://useaurora.app/opengraph/og-image.png"
-      />
+      <meta name="twitter:site" content="@useaurora_app" />
+      <meta name="twitter:creator" content="@useaurora_app" />
 
       {process.env.NEXT_PUBLIC_AURORA_ID !== "" ? (
         <script
