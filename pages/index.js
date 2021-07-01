@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import { Aurora } from "@/components/Aurora";
 
 const Index = () => {
   return (
@@ -6,6 +7,7 @@ const Index = () => {
       <div className="flex flex-col space-y-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="sm:flex sm:flex-col sm:align-center">
+            <Aurora className="h-14 sm:h-28 w-auto mb-8 sm:mb-14" />
             <h2 className="block tracking-tight text-5xl md:text-6xl lg:text-7xl  font-bold text-white sm:text-center">
               {" "}
               100% <br className="sm:hidden" /> Cookie-Free
