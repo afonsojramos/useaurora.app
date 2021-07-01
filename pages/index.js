@@ -1,9 +1,17 @@
+import Head from "next/head";
 import NextLink from "next/link";
 import { Aurora } from "@/components/Aurora";
 
 const Index = () => {
   return (
     <div className="h-screen flex items-center justify-center bg-black">
+      <Head>
+        <title>Aurora | Open Website Analytics</title>
+        <meta
+          name="description"
+          content="Hate Cookies? Introducing Aurora, 100% Cookie-Free Open Website Analytics."
+        />
+      </Head>
       <div className="flex flex-col space-y-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="sm:flex sm:flex-col sm:align-center">
