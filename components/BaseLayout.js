@@ -80,6 +80,10 @@ export const BaseLayout = ({ frontMatter, children, ...rest }) => {
   const router = useRouter();
   const isHome = router.pathname === "/";
 
+  if (isHome) {
+    return children;
+  }
+
   return (
     <div className="flex flex-col">
       <Navbar />
