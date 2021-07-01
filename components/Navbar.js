@@ -1,4 +1,6 @@
+import React from "react";
 import NextLink from "next/link";
+import Router from "next/router";
 import { useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { SearchIcon } from "@heroicons/react/solid";
@@ -71,33 +73,35 @@ export const Navbar = () => {
                 </div>
               </div>
               */}
-              <div className="flex lg:hidden">
-                {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-              <div className="hidden lg:block lg:ml-4">
-                <div className="flex items-center">
-                  <button
-                    onClick={() =>
-                      setTheme(resolvedTheme === "dark" ? "light" : "dark")
-                    }
-                    className="flex-shrink-0 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none"
-                  >
-                    <span className="sr-only">Toggle Theme</span>
-                    {mounted && resolvedTheme === "dark" && (
-                      <SunIcon className="h-6 w-6" aria-hidden="true" />
+              <div className="flex items-center flex-row-reverse">
+                <div className="flex lg:hidden ml-3">
+                  {/* Mobile menu button */}
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <span className="sr-only">Open main menu</span>
+                    {open ? (
+                      <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    ) : (
+                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                     )}
-                    {mounted && resolvedTheme === "light" && (
-                      <MoonIcon className="h-6 w-6" aria-hidden="true" />
-                    )}
-                  </button>
+                  </Disclosure.Button>
+                </div>
+                <div className="block lg:ml-4">
+                  <div className="flex items-center">
+                    <button
+                      onClick={() =>
+                        setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                      }
+                      className="flex-shrink-0 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none"
+                    >
+                      <span className="sr-only">Toggle Theme</span>
+                      {mounted && resolvedTheme === "dark" && (
+                        <SunIcon className="h-6 w-6" aria-hidden="true" />
+                      )}
+                      {mounted && resolvedTheme === "light" && (
+                        <MoonIcon className="h-6 w-6" aria-hidden="true" />
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
