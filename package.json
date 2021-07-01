@@ -1,7 +1,11 @@
 {
-  "name": "docs.useaurora.app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "useaurora.app",
+  "version": "1.0.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/useaurora/useaurora.app"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
