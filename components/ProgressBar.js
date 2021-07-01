@@ -3,6 +3,8 @@ import Router from "next/router";
 import NProgress from "nprogress";
 import { debounce } from "lodash";
 
+import "nprogress/nprogress.css";
+
 export const useProgressBar = () => {
   const { start, done } = NProgress;
 
@@ -13,7 +15,7 @@ export const useProgressBar = () => {
 };
 
 export const ProgressBar = React.memo(() => {
-  const start = debounce(NProgress.start, 450);
+  const start = debounce(NProgress.start, 150);
 
   React.useEffect(() => {
     Router.events.on("routeChangeStart", (url) => {
