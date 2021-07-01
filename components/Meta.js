@@ -33,6 +33,10 @@ export const Meta = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@blockstack" />
       <meta name="twitter:creator" content="@blockstack" />
+      <meta
+        name="og:image"
+        content="https://useaurora.app/opengraph/og-image.png"
+      />
 
       {process.env.NEXT_PUBLIC_AURORA_ID !== "" ? (
         <script
