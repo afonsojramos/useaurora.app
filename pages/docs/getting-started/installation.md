@@ -4,156 +4,134 @@ title: Installation
 
 # Installation
 
-Paragraphs are separated by a blank line.
+You have to options to install Aurora, one with Docker, and one manually. In this page you will find twice the options.
 
-2nd paragraph. _Italic_, **bold**, and `monospace`. Itemized lists
-look like:
+## Docker Installation
 
-- this one
-- that one
-- the other one
+### Requirements
 
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
+The Aurora deployment with Docker has the following requirements to function properly:
 
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
+- Docker >= 19
+- Docker Compose >= 1.26
 
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
+### Up and Running!
 
-## An h2 header
+If you want to start in seconds you can use a `docker-compose.yml` like this example:
 
-Here's a numbered list:
+```yaml
+version: "3.7"
+services:
+  ui:
+    image: ghcr.io/useaurora/aurora/aurora
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:5000
+    depends_on:
+      - postgres
 
-1.  first item
-2.  second item
-3.  third item
+  api:
+    image: ghcr.io/useaurora/api/api
+    ports:
+      - "5000:5000"
+    environment:
+      DB_CONNECTION: pg
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_DATABASE: aurora
+      DB_USERNAME: aurora
+      DB_PASSWORD: aurora
+      DB_SSL: "false"
 
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
+      JWT_SECRET: djd83ng94hf03hf93j
+    depends_on:
+      - postgres
 
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_DB: aurora
+      POSTGRES_USER: aurora
+      POSTGRES_PASSWORD: aurora
+    volumes:
+      - aurora_postgres:/var/lib/postgresql/data
 
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
-
+volumes:
+  aurora_postgres:
 ```
-define foobar() {
-    print "Welcome to flavor country!";
-}
+
+And deploy all the stuff with the following command:
+
+```bash
+docker-compose up -d
 ```
 
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
+This file will pull all the needing images in order to run an Aurora instance.
 
-```python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print i
+Congratulations! Now follow the Initialization section to add your first user to Aurora!
+
+## Manual Installation
+
+### Requirements
+
+The Aurora manual deployment has the following requirements to function properly:
+
+- Node.js >= 12
+- PostgreSQL => 12
+
+### Install the Aurora API Module
+
+Run the following command to clone the repository:
+
+```bash
+git clone https://github.com/useaurora/api.git
 ```
 
-### An h3 header
+So install the dependencies:
 
-Now a nested list:
+```bash
+cd api && npm install
+```
 
-1.  First, get these ingredients:
+Once you have installed the dependencies, copy the .env.example file to a .env:
 
-    - carrots
-    - celery
-    - lentils
+```bash
+cp .env.example .env
+```
 
-2.  Boil some water.
+The .env file will be pre-filled with some empty keys, once you filled, run the start command in order to run the server.
 
-3.  Dump everything in the pot and follow
-    this algorithm:
+```bash
+npm start
+```
 
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
+That's all for the API module!
 
-    Do not bump wooden spoon or it will fall.
+### Install the Aurora UI Module
 
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
+Run the following command to clone the repository:
 
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote [^1].
+```bash
+git clone https://github.com/useaurora/aurora.git
+```
 
-[^1]: Footnote text goes here.
+So install the dependencies:
 
-Tables can look like this:
+```bash
+cd aurora && npm install
+```
 
-size material color
+Once you have installed the dependencies, copy the .env.example file to a .env.
 
----
+```bash
+cp .env.example .env
+```
 
-9 leather brown
-10 hemp canvas natural
-11 glass transparent
+The .env file will be pre-filled with some empty keys, once you filled, run the build & start command in order to run the server.
 
-Table: Shoes, their sizes, and what they're made of
+```bash
+npm run build && npm run start
+```
 
-(The above is the caption for the table.) Pandoc also supports
-multi-line tables:
-
----
-
-keyword text
-
----
-
-red Sunsets, apples, and
-other red or reddish
-things.
-
-green Leaves, grass, frogs
-and other things it's
-not easy being.
-
----
-
-A horizontal rule follows.
-
----
-
-Here's a definition list:
-
-apples
-: Good for making applesauce.
-oranges
-: Citrus!
-tomatoes
-: There's no "e" in tomatoe.
-
-Again, text is indented 4 spaces. (Put a blank line between each
-term/definition pair to spread things out more.)
-
-Here's a "line block":
-
-| Line one
-| Line too
-| Line tree
-
-and images can be specified like so:
-
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
+Congratulations! Now follow the Initialization section to add your first user to Aurora!
