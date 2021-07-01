@@ -33,6 +33,15 @@ export const Meta = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@blockstack" />
       <meta name="twitter:creator" content="@blockstack" />
+
+      {process.env.NEXT_PUBLIC_AURORA_ID !== "" ? (
+        <script
+          async
+          defer
+          src="https://aurora-analytics.herokuapp.com/public/aurora.js"
+          aurora-id={process.env.NEXT_PUBLIC_AURORA_ID}
+        ></script>
+      ) : null}
     </Head>
   );
 };
