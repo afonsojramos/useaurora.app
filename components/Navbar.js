@@ -1,9 +1,28 @@
+import NextLink from "next/link";
 import { useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { SearchIcon } from "@heroicons/react/solid";
 import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useTheme } from "next-themes";
 import { Aurora } from "../components/Aurora";
+
+const NavbarItem = (props) => {
+  return (
+    <NextLink href={props.link}>
+      <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+        {props.text}
+      </a>
+    </NextLink>
+  );
+};
+
+const NavbarHeader = (props) => {
+  return (
+    <div className="flex items-center px-5 uppercase">
+      <div className="text-xs font-medium text-gray-400">{props.text}</div>
+    </div>
+  );
+};
 
 export const Navbar = () => {
   const [mounted, setMounted] = useState(false);
@@ -79,74 +98,52 @@ export const Navbar = () => {
           </div>
 
           <Disclosure.Panel className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-              <a
-                href="#"
-                className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Dashboard
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Team
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Projects
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Calendar
-              </a>
-            </div>
-            <div className="pt-4 pb-3 border-t border-gray-700">
-              <div className="flex items-center px-5">
-                <div className="flex-shrink-0">
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  />
-                </div>
-                <div className="ml-3">
-                  <div className="text-base font-medium text-white">
-                    Tom Cook
-                  </div>
-                  <div className="text-sm font-medium text-gray-400">
-                    tom@example.com
-                  </div>
-                </div>
-                <button className="ml-auto flex-shrink-0 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                  <span className="sr-only">View notifications</span>
-                  <SunIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+            <div className="pt-4 pb-3">
+              <NavbarHeader text="Introduction" />
+
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                <NavbarItem link="/docs/introduction/about" text="About" />
+                <NavbarItem
+                  link="/docs/introduction/features"
+                  text="Features"
+                />
+                <NavbarItem link="/docs/introduction/faq" text="FAQ" />
               </div>
+            </div>
+
+            <div className="pt-4 pb-3 border-t border-gray-700">
+              <NavbarHeader text="Getting Started" />
               <div className="mt-3 px-2 space-y-1">
-                <a
-                  href="#"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                >
-                  Your Profile
-                </a>
-                <a
-                  href="#"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                >
-                  Settings
-                </a>
-                <a
-                  href="#"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                >
-                  Sign out
-                </a>
+                <NavbarItem
+                  link="/docs/getting-started/installation"
+                  text="Installation"
+                />
+                <NavbarItem
+                  link="/docs/getting-started/initialization"
+                  text="Initialization"
+                />
+                <NavbarItem
+                  link="/docs/getting-started/add-a-website"
+                  text="Add a Website"
+                />
+                <NavbarItem
+                  link="/docs/getting-started/collect-data"
+                  text="Collect Data"
+                />
+                <NavbarItem
+                  link="/docs/getting-started/share-statistics"
+                  text="Share Statistics"
+                />
+              </div>
+            </div>
+
+            <div className="pt-4 pb-3 border-t border-gray-700">
+              <NavbarHeader text="Integrations" />
+              <div className="mt-3 px-2 space-y-1">
+                <NavbarItem
+                  link="/docs/integrations/ghost-blog"
+                  text="Ghost Blog"
+                />
               </div>
             </div>
           </Disclosure.Panel>

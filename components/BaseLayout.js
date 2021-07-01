@@ -25,7 +25,7 @@ const SidebarHeader = (props) => {
 
 const Sidebar = () => {
   return (
-    <nav className="overflow-y-auto font-medium text-base lg:text-sm">
+    <nav className="overflow-y-auto font-medium text-base lg:text-sm hidden lg:block">
       <ul>
         <li className="mt-0">
           <SidebarHeader text="Introduction" />
