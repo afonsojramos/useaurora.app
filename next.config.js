@@ -1,4 +1,5 @@
 const path = require("path");
+const unwrapImages = require("remark-unwrap-images");
 
 module.exports = {
   pageExtensions: ["js", "ts", "tsx", "md", "mdx"],
@@ -10,7 +11,7 @@ module.exports = {
         {
           loader: "@mdx-js/loader",
           options: {
-            remarkPlugins: [],
+            remarkPlugins: [unwrapImages],
             rehypePlugins: [],
           },
         },
