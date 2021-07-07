@@ -45,6 +45,7 @@ services:
       DB_SSL: "false"
 
       JWT_SECRET: djd83ng94hf03hf93j
+      AUTH_MODE: jwt
     depends_on:
       - postgres
 
@@ -70,6 +71,8 @@ docker-compose up -d
 This file will pull all the needing images in order to run an Aurora instance.
 
 Congratulations! Now follow the Initialization section to add your first user to Aurora!
+
+> By default, Aurora uses the JWT as AUTH MODE even if not specified. You can set up also the cookie method which is recommended, using the _cookie_ value instead of _jwt_. For more informations check the [Authentication](/docs/advanced/authentication) section.
 
 ## Manual Installation
 
