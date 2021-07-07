@@ -63,6 +63,16 @@ const Sidebar = () => {
         </li>
 
         <li className="mt-8">
+          <SidebarHeader text="Advanced" />
+          <ul>
+            <SidebarItem
+              link="/docs/advanced/authentication"
+              text="Authentication"
+            />
+          </ul>
+        </li>
+
+        <li className="mt-8">
           <SidebarHeader text="Integrations" />
           <ul>
             <SidebarItem

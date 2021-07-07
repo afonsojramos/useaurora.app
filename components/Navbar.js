@@ -148,6 +148,16 @@ export const Navbar = () => {
             </div>
 
             <div className="pt-4 pb-3 border-t border-gray-700">
+              <NavbarHeader text="Advanced" />
+              <div className="mt-3 px-2 space-y-1">
+                <NavbarItem
+                  link="/docs/advanced/authentication"
+                  text="Authentication"
+                />
+              </div>
+            </div>
+
+            <div className="pt-4 pb-3 border-t border-gray-700">
               <NavbarHeader text="Integrations" />
               <div className="mt-3 px-2 space-y-1">
                 <NavbarItem
