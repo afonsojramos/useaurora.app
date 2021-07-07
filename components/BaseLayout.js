@@ -71,6 +71,22 @@ const Sidebar = () => {
             />
           </ul>
         </li>
+
+        <li className="mt-8">
+          <SidebarHeader text="Github" />
+          <ul>
+            <li>
+              <a
+                href="https://github.com/useaurora/aurora"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-0 py-2 transition-colors duration-200 relative block hover:text-gray-900 text-gray-500 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <span className="relative">Star on Github! 🌟</span>
+              </a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
   );

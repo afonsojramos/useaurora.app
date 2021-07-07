@@ -156,6 +156,20 @@ export const Navbar = () => {
                 />
               </div>
             </div>
+
+            <div className="pt-4 pb-3 border-t border-gray-700">
+              <NavbarHeader text="Github" />
+              <div className="mt-3 px-2 space-y-1">
+                <a
+                  href="https://github.com/useaurora/aurora"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                >
+                  Star on Github! 🌟
+                </a>
+              </div>
+            </div>
           </Disclosure.Panel>
         </>
       )}
