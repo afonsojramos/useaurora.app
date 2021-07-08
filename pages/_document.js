@@ -9,7 +9,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta
+            name="google-site-verification"
+            content="OHfLggHkLxzHn1VY2RRyCk2pVXgwo-eQBofGUVwM_V4"
+          />
+        </Head>
         <body className="bg-white dark:bg-black transition-colors duration-200">
           <Main />
           <NextScript />
