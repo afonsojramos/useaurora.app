@@ -1,5 +1,4 @@
 module.exports = {
-  siteUrl: "https://useaurora.app",
+  siteUrl: "https://www.useaurora.app",
   generateRobotsTxt: true,
-  // ...other options
 };
