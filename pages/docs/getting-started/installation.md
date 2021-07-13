@@ -4,7 +4,7 @@ title: Installation
 
 # Installation
 
-You have to options to install Aurora, one with Docker, and one manually. In this page you will find twice the options.
+There are two options when it comes to the installation of Aurora. With Docker and a manual installation, both of which are described within this page.
 
 ## Docker Installation
 
