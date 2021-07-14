@@ -1,13 +1,11 @@
 import Head from "next/head";
 import NextLink from "next/link";
-import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Aurora } from "@/components/Aurora";
 import { Github } from "@/components/Github";
-import { Subscribe } from "@/components/Subscribe";
 
 const Index = () => {
   return (
-    <div className="flex flex-col justify-center bg-gradient-to-b from-gray-800 via-gray-900 to-black min-h-screen">
+    <div className="flex flex-col bg-gradient-to-b from-gray-800 via-gray-900 to-black min-h-screen">
       <Head>
         <title>Aurora | Open Website Analytics</title>
         <meta
