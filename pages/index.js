@@ -66,11 +66,13 @@ const Index = () => {
           </a>
         </div>
 
+        {/*
         <div className="border-t mt-12 sm:mt-24 border-gray-800" />
 
         <div className="max-w-2xl mx-auto mt-6 sm:mt-12">
           <Subscribe />
         </div>
+        */}
       </div>
     </div>
   );
