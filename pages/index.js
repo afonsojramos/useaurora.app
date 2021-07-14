@@ -7,7 +7,7 @@ import { Subscribe } from "@/components/Subscribe";
 
 const Index = () => {
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center bg-gradient-to-b from-gray-800 via-gray-900 to-black min-h-screen">
       <Head>
         <title>Aurora | Open Website Analytics</title>
         <meta
