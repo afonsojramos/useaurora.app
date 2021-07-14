@@ -3,6 +3,7 @@ import NextLink from "next/link";
 import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Aurora } from "@/components/Aurora";
 import { Github } from "@/components/Github";
+import { Subscribe } from "@/components/Subscribe";
 
 const Index = () => {
   return (
@@ -46,12 +47,12 @@ const Index = () => {
 
         <div className="max-w-2xl mx-auto mt-6 sm:mt-12">
           <p className="font-medium text-lg md:text-xl lg:text-2xl !leading-relaxed text-white sm:text-center">
-            Promote your podcast on social media with short teaser videos. No
-            design skills needed.
+            Collect Anonymous Data.
+            <br /> Make your Audience Happy Now!
           </p>
         </div>
 
-        <div className="flex flex-wrap sm:flex-nowrap justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6 sm:mt-12">
+        <div className="flex flex-wrap sm:flex-nowrap justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8 sm:mt-14">
           <NextLink href="/docs/getting-started/installation">
             <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-700 hover:bg-gray-600 md:py-4 md:text-lg md:px-10">
               See Docs!
@@ -63,6 +64,12 @@ const Index = () => {
           >
             See Demo!
           </a>
+        </div>
+
+        <div className="border-t mt-12 sm:mt-24 border-gray-800" />
+
+        <div className="max-w-2xl mx-auto mt-6 sm:mt-12">
+          <Subscribe />
         </div>
       </div>
     </div>
