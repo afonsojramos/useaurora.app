@@ -42,7 +42,7 @@ const Index = () => {
         </div>
       </nav>
 
-      <div className="max-w-3xl mx-auto pt-20 sm:pt-48 pb-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto pt-20 sm:pt-48 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
           <h1 className="block tracking-tight text-5xl md:text-6xl lg:text-7xl !leading-none font-bold text-white sm:text-center">
             {" "}
