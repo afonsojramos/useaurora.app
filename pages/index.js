@@ -23,11 +23,20 @@ const Index = () => {
               <div className="flex-shrink-0">
                 <NextLink href="/">
                   <a>
-                    <Aurora className="block lg:hidden h-20 w-auto" />
-                    <Aurora className="hidden lg:block h-8 w-auto" />
+                    <Aurora className="block sm:hidden h-20 w-auto" />
+                    <Aurora className="hidden sm:block h-12 w-auto" />
                   </a>
                 </NextLink>
               </div>
+            </div>
+            <div className="hidden sm:block">
+              <a
+                href="https://github.com/useaurora/aurora"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-16 cursor-pointer opacity-75 hover:opacity-100 transition duration-300" />
+              </a>
             </div>
           </div>
         </div>
@@ -66,8 +75,21 @@ const Index = () => {
           </a>
         </div>
 
+        <div className="block sm:hidden">
+          <div className="border-t mt-12 sm:mt-24 border-gray-800" />
+
+          <div className="max-w-2xl mx-auto mt-6 sm:mt-12 flex justify-center">
+            <a
+              href="https://github.com/useaurora/aurora"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="h-16 cursor-pointer opacity-75 hover:opacity-100" />
+            </a>
+          </div>
+        </div>
         {/*
-        <div className="border-t mt-12 sm:mt-24 border-gray-800" />
+
 
         <div className="max-w-2xl mx-auto mt-6 sm:mt-12">
           <Subscribe />
