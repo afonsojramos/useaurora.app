@@ -32,20 +32,20 @@ const Index = () => {
         </div>
       </nav>
 
-      <div className="max-w-3xl mx-auto pt-28 sm:pt-48 pb-8 px-4 sm:px-6 lg:px-8">
-        <div class="sm:flex sm:flex-col sm:align-center">
-          <h1 class="block tracking-tight text-5xl md:text-6xl lg:text-7xl !leading-none font-bold text-white sm:text-center">
+      <div className="max-w-3xl mx-auto pt-20 sm:pt-48 pb-8 px-4 sm:px-6 lg:px-8">
+        <div className="sm:flex sm:flex-col sm:align-center">
+          <h1 className="block tracking-tight text-5xl md:text-6xl lg:text-7xl !leading-none font-bold text-white sm:text-center">
             {" "}
-            Web Analytics
+            Web <br className="block sm:hidden" /> Analytics
             <br /> with no{" "}
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
               cookies.
             </span>
           </h1>
         </div>
 
-        <div class="max-w-2xl mx-auto mt-6 sm:mt-12">
-          <p class="font-medium text-lg md:text-xl lg:text-2xl !leading-relaxed text-white sm:text-center">
+        <div className="max-w-2xl mx-auto mt-6 sm:mt-12">
+          <p className="font-medium text-lg md:text-xl lg:text-2xl !leading-relaxed text-white sm:text-center">
             Promote your podcast on social media with short teaser videos. No
             design skills needed.
           </p>
