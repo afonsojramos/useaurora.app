@@ -14,6 +14,16 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="OHfLggHkLxzHn1VY2RRyCk2pVXgwo-eQBofGUVwM_V4"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin={true}
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body className="bg-white dark:bg-black transition-colors duration-200">
           <Main />
