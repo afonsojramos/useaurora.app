@@ -1,6 +1,5 @@
 import React from "react";
 import NextLink from "next/link";
-import Router from "next/router";
 import { useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { SearchIcon } from "@heroicons/react/solid";
@@ -31,7 +30,20 @@ export const Navbar = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
   // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+
+    if (window.docsearch) {
+      window.docsearch({
+        apiKey: process.env.NEXT_PUBLIC_ALGOLIA_API_KEY,
+        indexName: process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME,
+        inputSelector: "#search",
+        debug: false, // Set debug to true if you want to inspect the dropdown
+      });
+    } else {
+      console.warn("Search has failed to load");
+    }
+  }, []);
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -49,14 +61,14 @@ export const Navbar = () => {
                   </NextLink>
                 </div>
               </div>
-              {/*
-              <div className="flex-1 flex justify-center px-2 lg:ml-6 lg:justify-end">
+
+              <div className="flex-1 hidden sm:flex justify-center px-2 lg:ml-6 lg:justify-end">
                 <div className="max-w-lg w-full lg:max-w-xs">
                   <label htmlFor="search" className="sr-only">
                     Search
                   </label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
                       <SearchIcon
                         className="h-5 w-5 text-gray-400"
                         aria-hidden="true"
@@ -72,7 +84,7 @@ export const Navbar = () => {
                   </div>
                 </div>
               </div>
-              */}
+
               <div className="flex items-center flex-row-reverse">
                 <div className="flex lg:hidden ml-3">
                   {/* Mobile menu button */}
